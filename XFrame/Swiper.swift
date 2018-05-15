@@ -191,7 +191,7 @@ public class Swiper: UIScrollView, UIScrollViewDelegate {
     }
     
     //点击操作
-    public func onClick(btn: UIButton)
+    @objc public func onClick(btn: UIButton)
     {
         self.onClickAction(btn: btn)
         

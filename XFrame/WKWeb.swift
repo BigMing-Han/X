@@ -172,13 +172,13 @@ extension wkNavigationDelegate {
     }
     
     //超时
-    func timeout()
+    @objc func timeout()
     {
         self.timer.invalidate()
     }
     
     //隐藏进度条
-    func hideProgress()
+    @objc func hideProgress()
     {
         if self.progressView != nil
         {

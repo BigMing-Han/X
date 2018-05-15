@@ -191,13 +191,13 @@ extension String
     
     public func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
         return boundingBox.height
     }
     
     public func widthWithConstrainedWidth(width: CGFloat, WithFont font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
         return boundingBox.width
     }
     
@@ -750,32 +750,7 @@ extension UIButton {
 }
 
 
-extension UILabel
-{
-    
-    // - texts = ["内容" : [#FFFFFF: 12]]        内容：[颜色：字体大小]
-    public func setAttrText(texts: [[String:[CGFloat:UIColor]]])
-    {
-        //阅读文本
-        let attr = NSMutableAttributedString()
-        for arr in texts
-        {
-            for text in arr
-            {
-                for font in text.value
-                {
-                    let agree = NSAttributedString(string: text.key, attributes: [
-                        NSForegroundColorAttributeName : font.value,
-                        NSFontAttributeName : UIFont.systemFont(ofSize: font.key)
-                        ])
-                    attr.append(agree)
-                }
-            }
-        }
-        
-        self.attributedText = attr
-    }
-}
+
 
 
 extension NSObject{
@@ -829,8 +804,8 @@ extension NSObject{
         for i in 0 ..< countInt
         {
             let temp = buff?[i]
-            let tempPro = property_getName(temp)
-            let proper = String.init(utf8String: tempPro!)
+            let tempPro = property_getName(temp!)
+            let proper = String.init(utf8String: tempPro)
             result.append(proper!)
         }
 
@@ -902,7 +877,7 @@ public class AnimateUIView: UIView, CAAnimationDelegate
         //        print("对象收回")
     }
     
-    public func run(_ recognizer: UITapGestureRecognizer? = nil)
+    @objc public func run(_ recognizer: UITapGestureRecognizer? = nil)
     {
         
         let target = recognizer?.view
@@ -928,7 +903,7 @@ public class AnimateUIView: UIView, CAAnimationDelegate
         }
     }
     
-    public func onclick(_ recognizer: UITapGestureRecognizer)
+    @objc public func onclick(_ recognizer: UITapGestureRecognizer)
     {
         //                print(recognizer.view?.tagName)
         if let view = recognizer.view

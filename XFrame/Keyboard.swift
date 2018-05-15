@@ -108,7 +108,7 @@ public class Keyboard: NSObject
         UIApplication.shared.keyWindow?.addSubview(self.keyboardBox!)
     }
     
-    public func onkeydown(_ recognizer: UITapGestureRecognizer)
+    @objc public func onkeydown(_ recognizer: UITapGestureRecognizer)
     {
         if let label = recognizer.view as? UILabel
         {
@@ -199,7 +199,7 @@ public class Keyboard: NSObject
         print("设置")
     }
     
-    public func delete()
+    @objc public func delete()
     {
         if self.value.count == 0
         {

@@ -197,7 +197,8 @@ public class Cache
             // - 过期时间
             if expired != 0
             {
-                try String("\(NSDate().timeIntervalSince1970 + expired)")?.write(to: URL(fileURLWithPath: documnet + "_expired"), atomically: true, encoding: String.Encoding.utf8)
+//                try String("\(NSDate().timeIntervalSince1970 + expired)")?.write(to: URL(fileURLWithPath: documnet + "_expired"), atomically: true, encoding: String.Encoding.utf8)
+                
             }
         }catch
         {

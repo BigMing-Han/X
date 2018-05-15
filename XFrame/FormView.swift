@@ -101,12 +101,12 @@ public class FormView: UIScrollView, UITextFieldDelegate {
      NText相关操作
      ***/
     
-    public func NTextAdd(recognizer: UITapGestureRecognizer)
+    @objc public func NTextAdd(recognizer: UITapGestureRecognizer)
     {
         NTtextAction(view: recognizer.view!, type: "add")
     }
     
-    public func NTextSub(recognizer: UITapGestureRecognizer)
+    @objc public func NTextSub(recognizer: UITapGestureRecognizer)
     {
         NTtextAction(view: recognizer.view!, type: "sub")
     }
@@ -251,7 +251,7 @@ public class FormView: UIScrollView, UITextFieldDelegate {
         return true
     }
     
-    public func textFieldChanged(_ textField: UITextField)
+    @objc public func textFieldChanged(_ textField: UITextField)
     {
         //        print("变化完毕\(textField.text!)")
         //格式化数据
@@ -270,7 +270,7 @@ public class FormView: UIScrollView, UITextFieldDelegate {
     }
     
     //键盘弹出
-    public func keyboardWillShow(notification:NSNotification)
+    @objc public func keyboardWillShow(notification:NSNotification)
     {
         //公共事件保存为全局变量
         self.keyboardNotification = notification
@@ -290,7 +290,7 @@ public class FormView: UIScrollView, UITextFieldDelegate {
         })
     }
     
-    public func keyboardWillHide(notification:NSNotification)
+    @objc public func keyboardWillHide(notification:NSNotification)
     {
         self.keyboardShowHide(notification: notification, callback: { (intersection) in
             self.frame.origin.y = self.oldFrame.origin.y
@@ -460,7 +460,7 @@ public class FormInput: UIView
         self.initCheckbox()
     }
     
-    public func toggleCheck()
+    @objc public func toggleCheck()
     {
         let status = self.isChecked ? false : true
         self.setcheck(status)

@@ -242,7 +242,7 @@ public class ListView: UIScrollView, UIScrollViewDelegate {
         }
     }
     
-    public func touchUpInside(btn: UIButton)
+    @objc public func touchUpInside(btn: UIButton)
     {
         btn.backgroundColor = UIColor.colorWithHexString("#000000", 0.05)
         
