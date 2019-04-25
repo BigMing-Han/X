@@ -10,18 +10,10 @@
 		07918A151ED2B7B900F76632 /* Finger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07918A141ED2B7B900F76632 /* Finger.swift */; };
 		091E6D2A1ECD70A100BD810C /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091E6D291ECD70A100BD810C /* Debug.swift */; };
 		0923DEE51F4D10C300FB6F35 /* TableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923DEE41F4D10C300FB6F35 /* TableList.swift */; };
-		0928A5171ECA98840028B807 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0928A5161ECA98840028B807 /* FormView.swift */; };
 		094252E21ED55BB5009E2AC3 /* XFrame.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 094252E11ED55BB5009E2AC3 /* XFrame.podspec */; };
-		099F122D1EC6C44700F58408 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F122C1EC6C44700F58408 /* ListView.swift */; };
-		09F5570B1EDE8D95002D9307 /* NetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5570A1EDE8D95002D9307 /* NetRequest.swift */; };
-		09F9431D1EE1190300728DC7 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9431C1EE1190300728DC7 /* Dialog.swift */; };
-		BF0178501EC44583008F3730 /* xframe.icon.js in Resources */ = {isa = PBXBuildFile; fileRef = BFA43B531EC344C0009E1AB4 /* xframe.icon.js */; };
-		BF771CD21EE59027007A1FF2 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF771CD11EE59027007A1FF2 /* Keyboard.swift */; };
 		BFA43AFA1EC3342D009E1AB4 /* XFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = BFA43AF81EC3342D009E1AB4 /* XFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFA43B0C1EC3344A009E1AB4 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B021EC3344A009E1AB4 /* Download.swift */; };
-		BFA43B0D1EC3344A009E1AB4 /* Https.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B031EC3344A009E1AB4 /* Https.swift */; };
 		BFA43B0E1EC3344A009E1AB4 /* ShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B041EC3344A009E1AB4 /* ShapeLayer.swift */; };
-		BFA43B0F1EC3344A009E1AB4 /* SvgReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B051EC3344A009E1AB4 /* SvgReader.swift */; };
 		BFA43B101EC3344A009E1AB4 /* Swiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B061EC3344A009E1AB4 /* Swiper.swift */; };
 		BFA43B111EC3344A009E1AB4 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B071EC3344A009E1AB4 /* System.swift */; };
 		BFA43B131EC3344A009E1AB4 /* WKNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA43B091EC3344A009E1AB4 /* WKNative.swift */; };
@@ -36,19 +28,12 @@
 		07918A141ED2B7B900F76632 /* Finger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finger.swift; sourceTree = "<group>"; };
 		091E6D291ECD70A100BD810C /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		0923DEE41F4D10C300FB6F35 /* TableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableList.swift; sourceTree = "<group>"; };
-		0928A5161ECA98840028B807 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		094252E11ED55BB5009E2AC3 /* XFrame.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XFrame.podspec; sourceTree = "<group>"; };
-		099F122C1EC6C44700F58408 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		09F5570A1EDE8D95002D9307 /* NetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetRequest.swift; sourceTree = "<group>"; };
-		09F9431C1EE1190300728DC7 /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
-		BF771CD11EE59027007A1FF2 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		BFA43AF51EC3342D009E1AB4 /* XFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA43AF81EC3342D009E1AB4 /* XFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XFrame.h; sourceTree = "<group>"; };
 		BFA43AF91EC3342D009E1AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFA43B021EC3344A009E1AB4 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
-		BFA43B031EC3344A009E1AB4 /* Https.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Https.swift; sourceTree = "<group>"; };
 		BFA43B041EC3344A009E1AB4 /* ShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeLayer.swift; sourceTree = "<group>"; };
-		BFA43B051EC3344A009E1AB4 /* SvgReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SvgReader.swift; sourceTree = "<group>"; };
 		BFA43B061EC3344A009E1AB4 /* Swiper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiper.swift; sourceTree = "<group>"; };
 		BFA43B071EC3344A009E1AB4 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		BFA43B091EC3344A009E1AB4 /* WKNative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKNative.swift; sourceTree = "<group>"; };
@@ -56,7 +41,6 @@
 		BFA43B161EC3345D009E1AB4 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		BFA43B171EC3345D009E1AB4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BFA43B181EC3345D009E1AB4 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
-		BFA43B531EC344C0009E1AB4 /* xframe.icon.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = xframe.icon.js; sourceTree = "<group>"; };
 		BFA43B581EC3F028009E1AB4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +76,6 @@
 		BFA43AF71EC3342D009E1AB4 /* XFrame */ = {
 			isa = PBXGroup;
 			children = (
-				BFA43B501EC34335009E1AB4 /* res */,
 				BFA43B151EC3344E009E1AB4 /* controller */,
 				BFA43B001EC33437009E1AB4 /* lib */,
 				BFA43AF81EC3342D009E1AB4 /* XFrame.h */,
@@ -105,20 +88,13 @@
 			isa = PBXGroup;
 			children = (
 				091E6D291ECD70A100BD810C /* Debug.swift */,
-				09F9431C1EE1190300728DC7 /* Dialog.swift */,
 				BFA43B021EC3344A009E1AB4 /* Download.swift */,
 				07918A141ED2B7B900F76632 /* Finger.swift */,
-				0928A5161ECA98840028B807 /* FormView.swift */,
-				BFA43B031EC3344A009E1AB4 /* Https.swift */,
-				099F122C1EC6C44700F58408 /* ListView.swift */,
-				09F5570A1EDE8D95002D9307 /* NetRequest.swift */,
 				BFA43B041EC3344A009E1AB4 /* ShapeLayer.swift */,
-				BFA43B051EC3344A009E1AB4 /* SvgReader.swift */,
 				BFA43B061EC3344A009E1AB4 /* Swiper.swift */,
 				BFA43B071EC3344A009E1AB4 /* System.swift */,
 				BFA43B091EC3344A009E1AB4 /* WKNative.swift */,
 				BFA43B0A1EC3344A009E1AB4 /* WKWeb.swift */,
-				BF771CD11EE59027007A1FF2 /* Keyboard.swift */,
 				0923DEE41F4D10C300FB6F35 /* TableList.swift */,
 			);
 			name = lib;
@@ -132,14 +108,6 @@
 				BFA43B181EC3345D009E1AB4 /* TabbarController.swift */,
 			);
 			name = controller;
-			sourceTree = "<group>";
-		};
-		BFA43B501EC34335009E1AB4 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				BFA43B531EC344C0009E1AB4 /* xframe.icon.js */,
-			);
-			name = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +164,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = BFA43AEB1EC3342D009E1AB4;
@@ -215,7 +184,6 @@
 			files = (
 				094252E21ED55BB5009E2AC3 /* XFrame.podspec in Resources */,
 				BFA43B591EC3F028009E1AB4 /* .gitignore in Resources */,
-				BF0178501EC44583008F3730 /* xframe.icon.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,21 +197,14 @@
 				091E6D2A1ECD70A100BD810C /* Debug.swift in Sources */,
 				07918A151ED2B7B900F76632 /* Finger.swift in Sources */,
 				BFA43B1B1EC3345D009E1AB4 /* WebViewController.swift in Sources */,
-				0928A5171ECA98840028B807 /* FormView.swift in Sources */,
 				BFA43B111EC3344A009E1AB4 /* System.swift in Sources */,
 				BFA43B1C1EC3345D009E1AB4 /* TabbarController.swift in Sources */,
-				09F9431D1EE1190300728DC7 /* Dialog.swift in Sources */,
 				BFA43B141EC3344A009E1AB4 /* WKWeb.swift in Sources */,
-				BF771CD21EE59027007A1FF2 /* Keyboard.swift in Sources */,
 				BFA43B0E1EC3344A009E1AB4 /* ShapeLayer.swift in Sources */,
 				BFA43B0C1EC3344A009E1AB4 /* Download.swift in Sources */,
-				099F122D1EC6C44700F58408 /* ListView.swift in Sources */,
-				09F5570B1EDE8D95002D9307 /* NetRequest.swift in Sources */,
 				BFA43B101EC3344A009E1AB4 /* Swiper.swift in Sources */,
-				BFA43B0D1EC3344A009E1AB4 /* Https.swift in Sources */,
 				BFA43B1A1EC3345D009E1AB4 /* MainController.swift in Sources */,
 				BFA43B131EC3344A009E1AB4 /* WKNative.swift in Sources */,
-				BFA43B0F1EC3344A009E1AB4 /* SvgReader.swift in Sources */,
 				0923DEE51F4D10C300FB6F35 /* TableList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +339,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -403,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xunshang.XFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
