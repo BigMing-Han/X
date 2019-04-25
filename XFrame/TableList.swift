@@ -22,7 +22,7 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
     private var onHeader:(() -> Void)? = nil
     private var onClick:((UITableViewCell, IndexPath) -> Void)? = nil
     
-    public override init(frame: CGRect, style: UITableViewStyle) {
+    public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
@@ -74,7 +74,7 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
         
         self.beginUpdates()
         let indexset = NSIndexSet(index: section!) as IndexSet
-        self.insertSections(indexset, with: UITableViewRowAnimation.fade)
+        self.insertSections(indexset, with: UITableView.RowAnimation.fade)
         self.endUpdates()
     }
     
@@ -85,7 +85,7 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
         {
             self.cells?[section] = cells
             let indexset = IndexSet.init(integer: section)
-            self.reloadSections(indexset, with: UITableViewRowAnimation.fade)
+            self.reloadSections(indexset, with: UITableView.RowAnimation.fade)
         }
     }
     
@@ -115,7 +115,7 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
         
         self.beginUpdates()
         let indexPaths:[IndexPath] = [IndexPath.init(row: row!, section: section)]
-        self.insertRows(at: indexPaths, with: UITableViewRowAnimation.fade)
+        self.insertRows(at: indexPaths, with: UITableView.RowAnimation.fade)
         self.endUpdates()
         
     }
@@ -126,7 +126,7 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
         if let _ = self.getCell(section: section, row: row)
         {
             self.cells?[section][row] = cell
-            self.reloadRows(at: [IndexPath(row: row, section: section)], with: UITableViewRowAnimation.fade)
+            self.reloadRows(at: [IndexPath(row: row, section: section)], with: UITableView.RowAnimation.fade)
         }
     }
     
@@ -180,9 +180,9 @@ public class TableList: UITableView, UITableViewDelegate, UITableViewDataSource 
         {
             if self.offCellSelected
             {
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                cell.selectionStyle = UITableViewCell.SelectionStyle.none
             }else{
-                cell.selectionStyle = UITableViewCellSelectionStyle.default
+                cell.selectionStyle = UITableViewCell.SelectionStyle.default
             }
             return cell
         }

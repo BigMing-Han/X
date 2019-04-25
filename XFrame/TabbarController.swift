@@ -34,18 +34,18 @@ public class TabbarController: UITabBarController {
         if (imgarr.count) > 0
         {
             imgarr[0] = (imgarr[0].scaleImage(scaleSize: height! / (imgarr[0].size.height)))
-            controller.tabBarItem.image = imgarr[0].withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            controller.tabBarItem.image = imgarr[0].withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         }
         
         if (imgarr.count) > 1
         {
             imgarr[1] = (imgarr[1].scaleImage(scaleSize: height! / (imgarr[1].size.height)))
-            controller.tabBarItem.selectedImage = imgarr[1].withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            controller.tabBarItem.selectedImage = imgarr[1].withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         }
         
         controller.tabBarItem.title = title
         
-        self.addChildViewController(controller)
+        self.addChild(controller)
     }
     
     override public func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -97,6 +97,6 @@ public class TabbarController: UITabBarController {
         
         // 给tabBarButton添加动画效果
         let tabBarLayer = (tabbarbuttonArray[index] as AnyObject).layer
-        tabBarLayer?.animate(type: "transform.scale", form: 0, to: 1, duration: 0.08, delegate: nil)
+        tabBarLayer?.animate(type: "transform.scale", form: 0, to: 1, duration: 0.08, delegate: nil, timing: "kCAMediaTimingFunctionEaseInEaseOut")
     }
 }

@@ -63,7 +63,7 @@ public class MainController: TabbarController, CAAnimationDelegate {
         {
             return views?[index]
         }else{
-            return GLOBAL_MAIN_VC.childViewControllers[0]
+            return GLOBAL_MAIN_VC.children[0]
         }
     }
 

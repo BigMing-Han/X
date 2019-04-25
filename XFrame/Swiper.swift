@@ -65,7 +65,7 @@ public class Swiper: UIScrollView, UIScrollViewDelegate {
             
             //创建文字
             var fontsize:CGFloat = 14
-            tab.setTitle(tabs[i], for: UIControlState.normal)
+            tab.setTitle(tabs[i], for: UIControl.State.normal)
             if param?["fontsize"] != nil
             {
                 fontsize = (param?["fontsize"]?.toCGFloat())!
@@ -80,10 +80,10 @@ public class Swiper: UIScrollView, UIScrollViewDelegate {
             
             if colors?["text"] != nil
             {
-                tab.setTitleColor(colors?["text"], for: UIControlState.normal)
+                tab.setTitleColor(colors?["text"], for: UIControl.State.normal)
                 if colors?["selected"] != nil
                 {
-                    tab.setTitleColor(colors?["selected"], for: UIControlState.selected)
+                    tab.setTitleColor(colors?["selected"], for: UIControl.State.selected)
                     tab.isSelected = false
                 }
             }
@@ -91,7 +91,7 @@ public class Swiper: UIScrollView, UIScrollViewDelegate {
             self.tabs_view?.addSubview(tab)
             
             //绑定点击事件
-            tab.addTarget(self, action: #selector(self.onClick), for: UIControlEvents.touchUpInside)
+            tab.addTarget(self, action: #selector(self.onClick), for: UIControl.Event.touchUpInside)
         }
         
         // 创建指示条
@@ -155,7 +155,7 @@ public class Swiper: UIScrollView, UIScrollViewDelegate {
         self.delegate = self
         self.bounces = false
         self.active_index = 0
-        self.decelerationRate = 0
+        self.decelerationRate = UIScrollView.DecelerationRate(rawValue: 0)
     }
     
     public func setBackBtn(btn: UIButton)

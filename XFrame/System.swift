@@ -191,13 +191,13 @@ extension String
     
     public func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
         return boundingBox.height
     }
     
     public func widthWithConstrainedWidth(width: CGFloat, WithFont font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedStringKey: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil)
         return boundingBox.width
     }
     
@@ -219,7 +219,7 @@ extension UIColor {
             cString = cString.substring(from: index)
         }
         
-        if (cString.characters.count != 6) {
+        if cString.count != 6 {
             return UIColor.red
         }
         
@@ -259,7 +259,7 @@ extension UIView {
     public func getSubviewByTagName(tagName: String) -> [UIView]
     {
         var split:[String] = []
-        if let _ = tagName.characters.index(of: "*")
+        if let _ = tagName.index(of: "*")
         {
             split = tagName.components(separatedBy: "*")
         }
@@ -308,66 +308,7 @@ extension UIView {
         return all
     }
     
-    public func icon(image:Any) -> UIImage
-    {
-        var img:UIImage!
-        if (image as? String) != nil
-        {
-            img = self.icon(name: image as! String).toImage()
-        }else if image as? UIImage != nil
-        {
-            img = image as! UIImage
-        }
-        
-        return img
-    }
-    
-    public func icon(name:String, fillcolor:String = "", bordercolor:String = "") -> UIView
-    {
-        let id = "icon-" + name
-        let svgreader = self.icon(resource: [id], jsname: "Frameworks/XFrame.framework/xframe.icon.js")
-        return svgreader.getIcon(name: id, fillcolor: fillcolor, bordercolor: bordercolor)
-    }
-    
-    //MARK: -设置存放在缓存下的路径-
-    public func newIcon(resource: [String], jsname: String) -> SvgReader
-    {
-        
-        var filepath:String = Cache.path(name: jsname)
-        
-        if #available(iOS 9.0, *) {
-        }else{
-            let toPath = NSTemporaryDirectory() + "xframe"
-            if !FileManager.default.fileExists(atPath: toPath){
-                try! FileManager.default.copyItem(atPath: filepath, toPath: toPath)
-            }
-            filepath = toPath + "/" + jsname
-        }
-        let svgreader = SvgReader(frame: self.frame)
-        svgreader.open(filepath: filepath, resource)
-        return svgreader
-
-    }
-    
-    public func icon(resource: [String], jsname: String) -> SvgReader
-    {
-        var filepath:String = Bundle.main.path(forAuxiliaryExecutable: jsname)!
-        
-        if #available(iOS 9.0, *) {
-        }else{
-            let toPath = NSTemporaryDirectory() + "xframe"
-            if !FileManager.default.fileExists(atPath: toPath){
-                try! FileManager.default.copyItem(atPath: filepath, toPath: toPath)
-            }
-            
-            filepath = toPath + "/" + jsname
-        }
-        
-        let svgreader = SvgReader(frame: self.frame)
-        svgreader.open(filepath: filepath, resource)
-        
-        return svgreader
-    }
+   
     
     public func toImage() -> UIImage
     {
@@ -387,7 +328,7 @@ extension UIView {
         var imageView:UIImageView?
         if color != nil
         {
-            imageView = UIImageView(image: image.withRenderingMode(UIImageRenderingMode.alwaysTemplate))
+            imageView = UIImageView(image: image.withRenderingMode(UIImage.RenderingMode.alwaysTemplate))
             imageView?.tintColor = color
         }else
         {
@@ -627,10 +568,11 @@ extension UIImage
         let newSize = self.YSscaleImage(imageLength: 1024)
         let newImage = self.reSizeImage(reSize: newSize)
         var compress:CGFloat = 1
-        var data = UIImageJPEGRepresentation(newImage, compress)
+        var data = newImage.jpegData(compressionQuality: compress)
+        
         while (data?.count)! > maxLength && compress > 0.01 {
             compress -= 0.02
-            data = UIImageJPEGRepresentation(newImage, compress)
+           data = newImage.jpegData(compressionQuality: compress)
         }
         let image:UIImage = UIImage.init(data: data!)!
         return image
@@ -707,7 +649,7 @@ extension UIImage
     public func flip(rawValue:Int) -> UIImage
     {
         let filpImageOrientation = (rawValue) % 8
-        return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: UIImageOrientation(rawValue: filpImageOrientation)!)
+        return UIImage(cgImage: self.cgImage!, scale: self.scale, orientation: UIImage.Orientation(rawValue: filpImageOrientation)!)
     }
 }
 
@@ -721,7 +663,7 @@ extension UIButton {
         self.backgroundColor = UIColor.red
         
         if title != ""{
-            self.setTitle(title, for: UIControlState.normal)
+            self.setTitle(title, for: UIControl.State.normal)
             self.titleLabel?.adjustsFontSizeToFitWidth = true
             scale = 0.8
         }
@@ -729,16 +671,16 @@ extension UIButton {
         if image.count > 0
         {
             scale = (self.frame.height - titleMinHeight) / image[0].size.height
-            self.setImage(image[0].scaleImage(scaleSize: scale).withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: UIControlState.normal)
+            self.setImage(image[0].scaleImage(scaleSize: scale).withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: UIControl.State.normal)
         }
         
         if image.count > 1
         {
             scale = (self.frame.height - titleMinHeight) / image[1].size.height
-            self.setImage(image[1].scaleImage(scaleSize: scale).withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: UIControlState.selected)
+            self.setImage(image[1].scaleImage(scaleSize: scale).withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: UIControl.State.selected)
         }
         
-        self.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
         
         self.titleEdgeInsets = UIEdgeInsets(top: (self.imageView?.frame.size.height)!, left: 0.0 - (self.imageView?.frame.size.width)!, bottom: 0.0, right: 0.0)
         
@@ -838,7 +780,7 @@ extension NSObject{
  */
 extension CALayer
 {
-    public func animate(type: String, form: Any? = nil, to: Any?, duration: CGFloat, repeatCount: Float = 0, delegate: Any? = nil, timing: String = kCAMediaTimingFunctionEaseInEaseOut, autoreverses:Bool = false, begin:CFTimeInterval = 0)
+    public func animate(type: String, form: Any? = nil, to: Any?, duration: CGFloat, repeatCount: Float = 0, delegate: Any? = nil, timing: String = "kCAMediaTimingFunctionEaseInEaseOut", autoreverses:Bool = false, begin:CFTimeInterval = 0)
     {
         let pulse = CABasicAnimation(keyPath: type)
         
@@ -847,7 +789,7 @@ extension CALayer
             pulse.delegate = delegate as? CAAnimationDelegate
         }
         
-        pulse.timingFunction = CAMediaTimingFunction(name:timing)
+        pulse.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName(rawValue: timing))
         pulse.duration = CFTimeInterval(duration)
         
         if form != nil
@@ -857,7 +799,8 @@ extension CALayer
         pulse.toValue = to
         pulse.repeatCount = repeatCount
         pulse.isRemovedOnCompletion = false
-        pulse.fillMode = kCAFillModeForwards
+//        pulse.fillMode = kCAFillModeForwards
+         pulse.fillMode = .forwards
         pulse.autoreverses = autoreverses
         pulse.beginTime = begin
         self.add(pulse, forKey: nil)
@@ -898,7 +841,7 @@ public class AnimateUIView: UIView, CAAnimationDelegate
                 }
             }else
             {
-                self.layer.animate(type: q[0] as! String, form: q[1], to: q[2], duration: "\(q[3]!)".toCGFloat(), delegate: self, timing: kCAMediaTimingFunctionLinear)
+                self.layer.animate(type: q[0] as! String, form: q[1], to: q[2], duration: "\(q[3]!)".toCGFloat(), delegate: self, timing: "kCAMediaTimingFunctionLinear")
             }
         }
     }

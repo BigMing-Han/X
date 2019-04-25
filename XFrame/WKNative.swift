@@ -26,14 +26,6 @@ public class WKNative: NSObject, UIWebViewDelegate {
         {
             switch action {
                 
-            case "Alert":
-                Dialog.alert(content: option["content"] as! String, title: option["title"] as! String, type: Dialog.ALERTTYPE.INFORMATION, ok: {
-                    
-                }, cancel: { 
-                    
-                })
-                break
-                
             case "Window":
                 var vc:WebViewController!
                 if option["url"] != nil
