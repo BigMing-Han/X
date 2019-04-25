@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XFrame"
-  s.version      = "0.3.7"
+  s.version      = "0.3.8"
   s.summary      = "XFrame"
   s.homepage     = "http://www.xunshangwang.com"
   s.license      = "MIT"

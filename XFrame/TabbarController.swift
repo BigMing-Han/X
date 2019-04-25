@@ -97,6 +97,6 @@ public class TabbarController: UITabBarController {
         
         // 给tabBarButton添加动画效果
         let tabBarLayer = (tabbarbuttonArray[index] as AnyObject).layer
-        tabBarLayer?.animate(type: "transform.scale", form: 0, to: 1, duration: 0.08, delegate: nil, timing: "kCAMediaTimingFunctionEaseInEaseOut")
+        tabBarLayer?.animate(type: "transform.scale", form: 0, to: 1, duration: 0.08, delegate: nil, timing: CAMediaTimingFunctionName.easeInEaseOut)
     }
 }

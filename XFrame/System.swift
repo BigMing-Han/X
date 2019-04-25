@@ -780,7 +780,7 @@ extension NSObject{
  */
 extension CALayer
 {
-    public func animate(type: String, form: Any? = nil, to: Any?, duration: CGFloat, repeatCount: Float = 0, delegate: Any? = nil, timing: String = "kCAMediaTimingFunctionEaseInEaseOut", autoreverses:Bool = false, begin:CFTimeInterval = 0)
+    public func animate(type: String, form: Any? = nil, to: Any?, duration: CGFloat, repeatCount: Float = 0, delegate: Any? = nil, timing: CAMediaTimingFunctionName = CAMediaTimingFunctionName.easeInEaseOut, autoreverses:Bool = false, begin:CFTimeInterval = 0)
     {
         let pulse = CABasicAnimation(keyPath: type)
         
@@ -789,7 +789,10 @@ extension CALayer
             pulse.delegate = delegate as? CAAnimationDelegate
         }
         
-        pulse.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName(rawValue: timing))
+//        pulse.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName(rawValue: timing))
+        
+        pulse.timingFunction = CAMediaTimingFunction.init(name: timing)
+        
         pulse.duration = CFTimeInterval(duration)
         
         if form != nil
@@ -841,7 +844,9 @@ public class AnimateUIView: UIView, CAAnimationDelegate
                 }
             }else
             {
-                self.layer.animate(type: q[0] as! String, form: q[1], to: q[2], duration: "\(q[3]!)".toCGFloat(), delegate: self, timing: "kCAMediaTimingFunctionLinear")
+                self.layer.animate(type: q[0] as! String, form: q[1], to: q[2], duration: "\(q[3]!)".toCGFloat(), delegate: self, timing: CAMediaTimingFunctionName.linear)
+                
+//                kCAMediaTimingFunctionLinear
             }
         }
     }
